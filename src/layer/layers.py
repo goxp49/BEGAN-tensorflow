@@ -46,4 +46,5 @@ def l1_loss(x, y):
 
 
 def resize_nn(x, size):
+    # 通过临近插值方式改变图像尺寸
     return tf.image.resize_nearest_neighbor(x, size=(int(size), int(size)))

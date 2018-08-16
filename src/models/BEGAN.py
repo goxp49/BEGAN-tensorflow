@@ -18,6 +18,7 @@ class BEGAN(Operator):
             x = fc(x, 8 * 8 * f, name='fc')
             x = tf.reshape(x, [-1, 8, 8, f])
 
+            # 第二个参数含义：[卷积核长，卷积核长， 输入卷积核个数（feature map）， 输出卷积核个数（feature map）]
             x = conv2d(x, [3, 3, f, f], stride=1, padding=p, name='conv1_a')
             x = tf.nn.elu(x)
             x = conv2d(x, [3, 3, f, f], stride=1,  padding=p, name='conv1_b')
